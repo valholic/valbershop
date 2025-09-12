@@ -62,7 +62,7 @@ export default function Testimony() {
 
     return (
         <div className="flex-grow flex flex-col font-bold font-Poiret bg-black/80 bg-blend-overlay bg-cover bg-center items-center py-5 lg:py-10 gap-y-30" style={{backgroundImage: `url(${TestimonyImage})`}}>
-            <p className="text-6xl text-[#d4af37] text-center">Our Testimony</p>
+            <p className="text-4xl lg:text-6xl text-[#d4af37] text-center">Our Testimony</p>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 relative p-5 lg:p-10" > 
                 <ChevronLeft className="text-white cursor-pointer h-full w-5 md:w-10 lg:w-15 absolute inset-y-0 left-2 md:left-5" onClick={() => OnChevron('left')} />
                 {testimoniesData.length !== 0 && 

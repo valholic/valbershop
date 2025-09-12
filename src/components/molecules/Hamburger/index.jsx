@@ -33,20 +33,23 @@ export default function Hamburger({ isHamburger, handleIsHamburger }) {
                 }} />
             }
             <X className="w-10 h-10 float-left cursor-pointer" onClick={() => handleIsHamburger(false)} />
-            <Link to={'/profile'} className={`flex flex-col hover:text-white items-end gap-y-4 ${path === '/profile' ? "text-white" : ""}`}>
+            <Link to={'/profile'} className={`flex flex-col hover:text-white items-end gap-y-4 ${path === '/profile' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>
                 <CgProfile className="text-7xl" />
                 <p>Profile</p>
             </Link>
-            <Link to={'/'} className={`hover:text-white ${path === '/' ? "text-white" : ""}`}>Home</Link>
-            <Link to={'/product'} className={`hover:text-white ${path === '/product' ? "text-white" : ""}`}>Product</Link>
-            <Link to={'/booking'} className={`hover:text-white ${path === '/booking' ? "text-white" : ""}`}>Booking</Link>
-            <Link to={'/gallery'} className={`hover:text-white ${path === '/gallery' ? "text-white" : ""}`}>Gallery</Link>
-            <Link to={'/testimony'} className={`hover:text-white ${path === '/testimony' ? "text-white" : ""}`}>Testimony</Link>
-            <Link to={'/contact'} className={`hover:text-white ${path === '/contact' ? "text-white" : ""}`}>Contact</Link>
-            <Link to={'/privacy-policy'} className={`hover:text-white ${path === '/privacy-policy' ? "text-white" : ""}`}>Privacy & Policy</Link>
-            <Link to={'/terms-conditions'} className={`hover:text-white ${path === '/terms-condition' ? "text-white" : ""}`}>Terms & Conditions</Link>
-            <Link to={'/cookies'} className={`hover:text-white ${path === '/cookies' ? "text-white" : ""}`}>Cookies</Link>
-            <button type="button" onClick={() => setIsLogOut(true)} className={`hover:text-white`}>{isLogin ? 'Log out' : 'Log in'}</button>
+            <Link to={'/'} className={`hover:text-white ${path === '/' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Home</Link>
+            <Link to={'/product'} className={`hover:text-white ${path === '/product' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Product</Link>
+            <Link to={'/booking'} className={`hover:text-white ${path === '/booking' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Booking</Link>
+            <Link to={'/gallery'} className={`hover:text-white ${path === '/gallery' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Gallery</Link>
+            <Link to={'/testimony'} className={`hover:text-white ${path === '/testimony' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Testimony</Link>
+            <Link to={'/contact'} className={`hover:text-white ${path === '/contact' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Contact</Link>
+            <Link to={'/privacy-policy'} className={`hover:text-white ${path === '/privacy-policy' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Privacy & Policy</Link>
+            <Link to={'/terms-conditions'} className={`hover:text-white ${path === '/terms-condition' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Terms & Conditions</Link>
+            <Link to={'/cookies'} className={`hover:text-white ${path === '/cookies' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Cookies</Link>
+            <button type="button" onClick={() => {
+                setIsLogOut(true);
+                handleIsHamburger(false);
+            }} className={`hover:text-white`}>{isLogin ? 'Log out' : 'Log in'}</button>
         </nav>
     )
 }
