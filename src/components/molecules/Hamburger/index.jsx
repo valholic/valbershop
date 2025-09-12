@@ -1,0 +1,28 @@
+import { X } from "lucide-react";
+import { CgProfile } from "react-icons/cg";
+import { Link, useLocation } from "react-router-dom";
+
+export default function Hamburger({ isHamburger, handleIsHamburger }) {
+    const location = useLocation();
+    const path = location.pathname;
+
+    return (
+        <nav className={`flex lg:hidden flex-col w-full md:w-1/2 text-end text-[#d4af37] font-Poiret bg-[#222222] p-4 h-screen fixed font-semibold text-3xl gap-y-5 md:gap-y-10 ${isHamburger ? "right-0" : "-right-full"} transition-all duration-1000`}>
+            <X className="w-10 h-10 float-left cursor-pointer" onClick={() => handleIsHamburger(false)} />
+            <Link to={'/profile'} className={`flex flex-col hover:text-white items-end gap-y-4 ${path === '/profile' ? "text-white" : ""}`}>
+                <CgProfile className="text-7xl" />
+                <p>Profile</p>
+            </Link>
+            <Link to={'/'} className={`hover:text-white ${path === '/' ? "text-white" : ""}`}>Home</Link>
+            <Link to={'/product'} className={`hover:text-white ${path === '/product' ? "text-white" : ""}`}>Product</Link>
+            <Link to={'/booking'} className={`hover:text-white ${path === '/booking' ? "text-white" : ""}`}>Booking</Link>
+            <Link to={'/gallery'} className={`hover:text-white ${path === '/gallery' ? "text-white" : ""}`}>Gallery</Link>
+            <Link to={'/testimony'} className={`hover:text-white ${path === '/testimony' ? "text-white" : ""}`}>Testimony</Link>
+            <Link to={'/contact'} className={`hover:text-white ${path === '/contact' ? "text-white" : ""}`}>Contact</Link>
+            <Link to={'/privacy-policy'} className={`hover:text-white ${path === '/privacy-policy' ? "text-white" : ""}`}>Privacy & Policy</Link>
+            <Link to={'/terms-conditions'} className={`hover:text-white ${path === '/terms-condition' ? "text-white" : ""}`}>Terms & Conditions</Link>
+            <Link to={'/cookies'} className={`hover:text-white ${path === '/cookies' ? "text-white" : ""}`}>Cookies</Link>
+            <Link to={'/login'} className={`hover:text-white`}>Logout</Link>
+        </nav>
+    )
+}

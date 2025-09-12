@@ -1,0 +1,21 @@
+import Login from "./Login";
+import Register from "./Register";
+import MainApp from "./MainApp";
+import Home from "./Home";
+import Admin from "./Admin";
+import Booking from "./Booking";
+import Contact from "./Contact";
+import Gallery from "./Gallery";
+import Product from "./Product";
+import Profile from "./Profile";
+import Testimony from "./Testimony";
+import Terms from "./Terms";
+import Cookies from "./Cookies";
+import Policy from "./Policy";
+import Dashboard from "./Dashboard";
+import GalleryForm from "./GalleryForm";
+import ProductForm from "./ProductForm";
+import TestimonyForm from "./TestimonyForm";
+import Cart from "./Cart";
+
+export { Home, Login, Register, MainApp, Admin, Booking, Contact, Gallery, Product, Profile, Testimony, Terms, Cookies, Policy, Dashboard, GalleryForm, ProductForm, TestimonyForm, Cart };

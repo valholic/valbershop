@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-Poiret: "Poiret One";
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #9ca3af transparent; /* abu-abu (gray-400 Tailwind) */
+
+    /* Chrome, Edge, Safari */
+    &::-webkit-scrollbar {
+      width: 6px; /* tipis */
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #9ca3af; /* gray-400 */
+      border-radius: 9999px; /* rounded-full */
+    }
+
+    /* ini yang bikin scrollbar di sebelah kiri */
+    direction: rtl;
+  }
+
+  /* biar kontennya tetep normal (nggak kebalik), kita override lagi */
+  .scrollbar-thin > * {
+    direction: ltr;
+  }
+
+  .scrollbar-hidden {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
