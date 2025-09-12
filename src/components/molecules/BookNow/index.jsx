@@ -57,7 +57,7 @@ export default function BookNow({ handleOut, sId}) {
     
     return (
         <div className="fixed inset-0 bg-black/70 z-30 w-screen h-screen flex flex-col items-center justify-center p-10">
-            <form className="w-[80%] md:w-[30%] h-[45%] md:h-[50%] absolute flex flex-col gap-y-4 z-70 bg-[#363636] p-5 rounded-2xl items-center justify-center font-Poiret" onSubmit={OnSubmit}>
+            <form className="w-[80%] md:w-[30%] h-fit absolute flex flex-col gap-y-4 z-70 bg-[#363636] p-5 rounded-2xl items-center justify-center font-Poiret" onSubmit={OnSubmit}>
                 <X className="w-8 h-8 absolute top-5 right-5 text-white cursor-pointer" onClick={handleOut} />
                 <p className="font-semibold text-xl lg:text-2xl text-[#d4af37]">Choose the date</p>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
