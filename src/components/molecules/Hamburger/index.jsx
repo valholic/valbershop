@@ -33,7 +33,7 @@ export default function Hamburger({ isHamburger, handleIsHamburger }) {
                 }} />
             }
             <X className="w-10 h-10 float-left cursor-pointer" onClick={() => handleIsHamburger(false)} />
-            <Link to={'/profile'} className={`flex flex-col hover:text-white items-end gap-y-4 ${path === '/profile' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>
+            <Link to={'/profile'} className={`flex flex-col hover:text-white justify-end items-end gap-y-4 ${path === '/profile' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>
                 <CgProfile className="text-7xl" />
                 <p>Profile</p>
             </Link>
@@ -46,10 +46,12 @@ export default function Hamburger({ isHamburger, handleIsHamburger }) {
             <Link to={'/privacy-policy'} className={`hover:text-white ${path === '/privacy-policy' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Privacy & Policy</Link>
             <Link to={'/terms-conditions'} className={`hover:text-white ${path === '/terms-condition' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Terms & Conditions</Link>
             <Link to={'/cookies'} className={`hover:text-white ${path === '/cookies' ? "text-white" : ""}`} onClick={() => handleIsHamburger(false)}>Cookies</Link>
-            <button type="button" onClick={() => {
-                setIsLogOut(true)
-                handleIsHamburger(false)
-            }} className={`hover:text-white`}>{isLogin ? 'Log out' : 'Log in'}</button>
+            <Link to={!isLogin ? '/login' : ''} onClick={() => {
+                if(isLogin){
+                    setIsLogOut(true);
+                }
+                handleIsHamburger(false);
+            }} className={`hover:text-white`}>{isLogin ? 'Log out' : 'Log in'}</Link>
         </nav>
     )
 }
