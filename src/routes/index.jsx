@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import { Cookies, Login, MainApp, Policy, Register, Terms } from "../pages"
 
 export default function Routing() {
