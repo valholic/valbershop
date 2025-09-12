@@ -34,6 +34,7 @@ export default function Login() {
                     }
                 })
                 .then(result => {
+                    console.log(result.data.user)
                     if(result.data.user.role === "customer") {
                         navigate('/');
                     } else if(result.data.user.role === "admin") {
