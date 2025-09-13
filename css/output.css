@@ -397,9 +397,6 @@
   .h-\[45\%\] {
     height: 45%;
   }
-  .h-\[50\%\] {
-    height: 50%;
-  }
   .h-\[55vh\] {
     height: 55vh;
   }
@@ -468,6 +465,9 @@
   }
   .w-60 {
     width: calc(var(--spacing) * 60);
+  }
+  .w-80 {
+    width: calc(var(--spacing) * 80);
   }
   .w-120 {
     width: calc(var(--spacing) * 120);
@@ -1133,6 +1133,11 @@
       height: calc(var(--spacing) * 20);
     }
   }
+  .md\:h-60 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 60);
+    }
+  }
   .md\:h-80 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 80);
@@ -1206,6 +1211,11 @@
   .md\:w-40 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 40);
+    }
+  }
+  .md\:w-80 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 80);
     }
   }
   .md\:w-100 {
