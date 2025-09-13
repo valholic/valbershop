@@ -7,8 +7,8 @@ export default function ConfirmAlert({ title, text, handleYes, handleNo}) {
                 <p className="text-4xl text-center w-full font-bold">{ title }</p>
                 <p className="text-2xl text-center w-full font-semibold">{ text }</p>
                 <div className="flex gap-x-3 w-full justify-center">
-                    <Button type={'submit'} name={'Yes'} handleClick={handleYes} />
-                    <Button type={'submit'} name={'No'} handleClick={handleNo} />
+                    <Button type={'button'} name={'Yes'} handleClick={handleYes} />
+                    <Button type={'button'} name={'No'} handleClick={handleNo} />
                 </div>
             </div>
         </div>
