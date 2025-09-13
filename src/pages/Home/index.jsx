@@ -40,8 +40,8 @@ export default function Home() {
                 <p className="text-2xl md:text-4xl lg:text-6xl font-bold text-[#d4af37] text-center my-5">Elevate Your Style with Valbershop</p>
                 <p className="text-sm md:text-base lg:text-2xl text-white text-center w-3/4 md:w-1/2 2xl:w-1/3 m-auto my-5">Find the best haircuts, professional grooming services, and a classy experience only at Valbershop.</p>
                 <div className="flex gap-x-5 justify-center items-center w-full md:w-2/3 lg:w-1/2 2xl:w-1/3 m-auto my-5">
-                    <Button name={'Book now!'} type={'button'} />
-                    <Button name={'See our services!'} type={'button'} />
+                    <Button name={'Book services now!'} type={'button'} handleClick={() => navigate('/booking')} />
+                    <Button name={'See our products!'} type={'button'} handleClick={() => navigate('/product')} />
                 </div>
             </section>
             <section className="p-10  flex-row">
@@ -108,9 +108,9 @@ export default function Home() {
                 </section>
             }
             <section className=" text-white text-center py-16">
-                <div className="w-1/2 m-auto">
-                    <h3 className="text-4xl lg:text-6xl font-bold my-10 text-[#d4af37]">Ready to Look Handsome?</h3>
-                    <Button name={'Book now!'} type={'button'} />
+                <div className="w-full lg:w-1/2 m-auto p-4">
+                    <h3 className="text-2xl md:text-4xl lg:text-6xl font-bold my-10 text-[#d4af37]">Ready to Look Handsome?</h3>
+                    <Button name={'Book now!'} type={'button'} handleClick={() => navigate('/booking')} />
                 </div>
             </section>
         </div> 

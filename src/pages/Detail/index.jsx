@@ -188,6 +188,9 @@ export default function Detail() {
                                     review.map((rev, i) => {
                                         return  <div className="w-full h-fit flex flex-col px-5 gap-y-1" key={i}>
                                                     <p className="text-xl lg:text-2xl font-bold text-[#d4af37]">{rev.name}</p>
+                                                    {rev.review_img &&
+                                                        <img src={`https://valbershop-api.vercel.app/${rev.review_img}`} className="w-1/3 h-1/4" />
+                                                    }
                                                     <p className="text-base lg:text-xl font-semibold text-white break-words">{rev.comment}</p>
                                                     <div className="flex flex-row gap-x-2">
                                                         {star.map(star => {

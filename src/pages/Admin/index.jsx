@@ -43,5 +43,9 @@ export default function Admin() {
                 </section>
             </div>
         )
+    } else {
+        <div className="flex flex-grow font-Poiret bg-[#0c0c0c] flex-col lg:flex-row p-5 gap-5">
+            <LoaderCircle className="text-[#d4af37] text-center w-full animate-spin" />
+        </div>
     }
 }
