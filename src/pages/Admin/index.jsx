@@ -2,6 +2,7 @@ import { Link, Route, Routes, useLocation, useNavigate } from "react-router-dom"
 import { Dashboard, GalleryForm, ProductForm, TestimonyForm } from "../index";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { LoaderCircle } from "lucide-react";
 
 export default function Admin() {
     const location = useLocation();
