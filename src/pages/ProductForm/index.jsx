@@ -3,7 +3,7 @@ import { Button, ConfirmAlert, InputFile, InputSelect, InputTPENT, Textarea, Zoo
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Circle, Trash, ZoomIn } from "lucide-react";
-import { TbCheck, TbPlus, TbX } from "react-icons/tb";
+import { TbPlus, TbX } from "react-icons/tb";
 
 export default function ProductForm() {
     const navigate = useNavigate();
@@ -81,7 +81,7 @@ export default function ProductForm() {
             images.map(img => {
                 return data.append('image', img);
             })
-    
+
             axios.post(`https://valbershop-api.vercel.app/v1/shop/add`, data, {
                 headers: {
                     "Content-Type": "multipart/form-data"
@@ -94,7 +94,7 @@ export default function ProductForm() {
                     navigate('/booking');
                 }
             })
-        } else if(isEdit) {
+        } else {
             const data = new FormData();
             data.append('name', name);
             data.append('type', type.toLowerCase());
