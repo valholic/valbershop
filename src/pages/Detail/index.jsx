@@ -122,7 +122,7 @@ export default function Detail() {
             <div className="flex-grow flex flex-col lg:flex-row">
                 {isPreview && 
                     <ZoomImage handleClick={() => setIsPreview(false)} handleIndex={setIndex} index={index} images={goodsData.image.map(img => {
-                        return `https://valbershop-api.vercel.app/${img}`;
+                        return img;
                     })} />
                 }
                 {Object.keys(goodsData).length !== 0 &&
@@ -132,7 +132,7 @@ export default function Detail() {
                                 <ChevronLeft className="text-white cursor-pointer h-4 lg:h-6 w-1/5" onClick={() => {
                                             index === 0 ? setIndex(0) : setIndex(index - 1);
                                 }} />
-                                <img src={`https://valbershop-api.vercel.app/${goodsData.image[index]}`} className="w-3/5 h-full object-contain cursor-pointer" onClick={() => setIsPreview(true)} />
+                                <img src={goodsData.image[index]} className="w-3/5 h-full object-contain cursor-pointer" onClick={() => setIsPreview(true)} />
                                 <ChevronRight className="text-white cursor-pointer h-4 lg:h-6 w-1/5" onClick={() => {
                                     index + 1 === goodsData.image.length ? setIndex(index) : setIndex(index + 1);
                                 }}  />
@@ -189,7 +189,7 @@ export default function Detail() {
                                         return  <div className="w-full h-fit flex flex-col px-5 gap-y-1" key={i}>
                                                     <p className="text-2xl lg:text-3xl font-bold text-[#d4af37]">{rev.name}</p>
                                                     {rev.review_img &&
-                                                        <img src={`https://valbershop-api.vercel.app/${rev.review_img}`} className="w-40 md:w-80 h-30 md:h-60" />
+                                                        <img src={rev.review_img} className="w-40 md:w-80 h-30 md:h-60" />
                                                     }
                                                     <p className="text-base lg:text-xl font-semibold text-white break-words">{rev.comment}</p>
                                                     <div className="flex flex-row gap-x-2">

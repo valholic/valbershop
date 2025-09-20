@@ -192,7 +192,7 @@ export default function ProductForm() {
             }
             setID(result.data.goodsData._id);
             setPreviewImages(result.data.goodsData.image.map(img => {
-                return `https://valbershop-api.vercel.app/${img}`;
+                return img;
             }));
         });
     }

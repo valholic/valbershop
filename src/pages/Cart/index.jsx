@@ -21,7 +21,7 @@ export default function Cart() {
             {cartData.length !== 0 && 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-8 items-center">
                     {cartData.map(cart => {
-                        return <CartCard key={cart._id} img={`https://valbershop-api.vercel.app/${cart.cart_image}`} name={cart.product_name} price={cart.amount * cart.price} pId={cart.product_id} cId={cart._id} time={cart.time} oldAmount={cart.amount} />
+                        return <CartCard key={cart._id} img={cart.cart_image} name={cart.product_name} price={cart.amount * cart.price} pId={cart.product_id} cId={cart._id} time={cart.time} oldAmount={cart.amount} />
                     })}
                 </div>
             }

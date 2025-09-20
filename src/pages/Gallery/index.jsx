@@ -56,10 +56,10 @@ export default function Gallery() {
 
     return (
         <div className="flex-grow">
-            {isZoom && <ZoomImage handleClick={() => setIsZoom(false)} index={previewIndex} handleIndex={setPreviewIndex} images={galleryData.map(photo => `https://valbershop-api.vercel.app/${photo.photo}`)} />}
+            {isZoom && <ZoomImage handleClick={() => setIsZoom(false)} index={previewIndex} handleIndex={setPreviewIndex} images={galleryData.map(photo => photo.photo)} />}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4 auto-rows-[150px] lg:auto-rows-[300px] p-5 lg:p-10">
                 {galleryData.map((photo, i) => {
-                    return <img src={`https://valbershop-api.vercel.app/${photo.photo}`} key={photo._id} loading="lazy" className={`w-full h-full object-cover hover:scale-105 cursor-pointer hover:border hover:border-white ${index.includes(i) && "row-span-2"}`} onClick={() => setIsZoom(true)} />
+                    return <img src={photo.photo} key={photo._id} loading="lazy" className={`w-full h-full object-cover hover:scale-105 cursor-pointer hover:border hover:border-white ${index.includes(i) && "row-span-2"}`} onClick={() => setIsZoom(true)} />
                 })
                 }
             </div>

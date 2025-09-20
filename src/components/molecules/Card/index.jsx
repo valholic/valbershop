@@ -54,7 +54,7 @@ export default function Card({ name, price, discount, img, id, type }) {
                 }
                 <div className="relative w-40 lg:w-80 h-80 lg:h-120 transition bg-[#242424] rounded-lg lg:rounded-2xl border border-[#d4af37] flex flex-col text-[#d4af37] lg:shadow-[#d4af37] lg:hover:shadow-lg overflow-hidden lg:group-hover:scale-105">
                     <div className="h-60 lg:h-80 w-full relative overflow-hidden">
-                        <img src={`https://valbershop-api.vercel.app/${img[index]}`} className="h-full w-full object-contain" />
+                        <img src={img[index]} className="h-full w-full object-contain" />
                         {img.length > 1 &&
                             <div className="absolute w-full h-fit bottom-0 flex flex-row gap-x-2 justify-center items-center">
                                 <ChevronLeft className="text-white cursor-pointer h-4 lg:h-6 w-1/5" onClick={() => {

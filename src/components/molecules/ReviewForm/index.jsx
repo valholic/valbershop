@@ -84,7 +84,7 @@ export default function ReviewForm({ handleOut, uName, uId, gId }) {
                 </div>
                 {img !== null && 
                     <div className="flex flex-col w-fit h-fit gap-y-4">
-                        <img src={`https://valbershop-api.vercel.app/${img}`} className="w-1/5 h-1/4 rounded-2xl" loading="lazy" />
+                        <img src={img} className="w-1/5 h-1/4 rounded-2xl" loading="lazy" />
                         <Button type={'button'} name={'Delete image'} handleClick={() => setImg(null)} width={'w-1/5'} />
                     </div>
                 }

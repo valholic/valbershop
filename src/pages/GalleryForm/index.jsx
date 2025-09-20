@@ -131,7 +131,7 @@ export default function GalleryForm() {
             }
             {isPreview &&
                 <ZoomImage handleClick={() => setIsPreview(false)} index={galleryIndex} handleIndex={setGalleryIndex} images={galleryData.map(photo => {
-                    return `https://valbershop-api.vercel.app/${photo.photo}`;
+                    return photo.photo;
                 })} />
             }
             {isConfirmDelete &&
@@ -189,10 +189,10 @@ export default function GalleryForm() {
                                 if(isSelect) {
                                     return <div className="w-full flex flex-nowrap gap-5" key={photo._id}>
                                         {selected.includes(photo._id) ? <CheckSquare className="text-[#d4af37] w-1/8 h-8 cursor-pointer" onClick={() => setSelected(selected.filter(id => id !== photo._id))} /> : <Square className="text-[#d4af37] w-1/8 h-8 cursor-pointer" onClick={() => setSelected([photo._id, ...selected])} />}
-                                        <img src={`https://valbershop-api.vercel.app/${photo.photo}`} className="w-7/8 h-4/5 object-contain rounded-2xl snap-center hover:opacity-80 cursor-pointer" onClick={() => setIsPreview(true)} />
+                                        <img src={photo.photo} className="w-7/8 h-4/5 object-contain rounded-2xl snap-center hover:opacity-80 cursor-pointer" onClick={() => setIsPreview(true)} />
                                     </div>
                                 } else {
-                                    return <img src={`https://valbershop-api.vercel.app/${photo.photo}`} className="w-full h-4/5 object-contain rounded-2xl snap-center hover:opacity-80 cursor-pointer" key={photo._id} onClick={() => setIsPreview(true)} />
+                                    return <img src={photo.photo} className="w-full h-4/5 object-contain rounded-2xl snap-center hover:opacity-80 cursor-pointer" key={photo._id} onClick={() => setIsPreview(true)} />
                                 }
                             })
                         }

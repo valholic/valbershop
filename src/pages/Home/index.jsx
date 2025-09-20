@@ -76,7 +76,7 @@ export default function Home() {
                         {
                             gallery.map((photo, i) => {
                                 if(i < 6) {
-                                    return <img src={`https://valbershop-api.vercel.app/${photo.photo}`} key={photo._id} className="rounded-lg object-cover shrink-0 w-120 h-90 snap-center" onClick={() => navigate('/gallery')}/>
+                                    return <img src={photo.photo} key={photo._id} className="rounded-lg object-cover shrink-0 w-120 h-90 snap-center" onClick={() => navigate('/gallery')}/>
                                 } else {
                                     return
                                 }
