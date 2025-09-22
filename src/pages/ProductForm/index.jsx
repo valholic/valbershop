@@ -13,7 +13,7 @@ export default function ProductForm() {
     const [type, setType] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
-    const [discount, setDiscount] = useState();
+    const [discount, setDiscount] = useState(null);
     const [stock, setStock] = useState(0);
     const [time, setTime] = useState([""]);
     const [productsData, setProductsData] = useState([]);
@@ -77,10 +77,10 @@ export default function ProductForm() {
                 time.map(tim => {
                     return data.append('time', tim);
                 })
-            }
+            };
             images.map(img => {
                 return data.append('image', img);
-            })
+            });
 
             axios.post(`https://valbershop-api.vercel.app/v1/shop/add`, data, {
                 headers: {
