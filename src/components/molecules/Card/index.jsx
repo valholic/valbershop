@@ -76,7 +76,7 @@ export default function Card({ name, price, discount, img, id, type }) {
                     <p className="text-lg lg:text-3xl font-extrabold font-Poiret p-2">{ name }</p>
                     <div className="flex flex-row gap-x-2 p-2">
                         <p className={`text-sm lg:text-xl font-semibold ${discount > 0 && "line-through"}`}>Rp{ price.toLocaleString('id-ID') }</p>
-                        {discount > 0 && <p className="text-sm lg:text-lg font-semibold">Rp{ (price * ((100 - discount)/100)).toLocaleString('id-ID') }</p>}
+                        {discount > 0 && <p className="text-sm lg:text-lg font-semibold">Rp{(price * ((100 - discount)/100)).toLocaleString('id-ID')}</p>}
                     </div>
                     <div className="flex flex-col lg:flex-row gap-2 p-2">
                         <Button type={'button'} name={'Detail'} handleClick={() => navigate(type === 'product' ? `/product/detail/${id}/${toSlug(name)}` : `/booking/detail/${id}/${toSlug(name)}`)} width={`w-full ${!onCart ? 'lg:w-1/2' : ''}`} />

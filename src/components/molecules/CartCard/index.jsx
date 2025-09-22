@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ChangeTime, Payment, ConfirmAlert } from "..";
 import { useNavigate } from "react-router-dom";
 
-export default function CartCard({ img, name, price, pId, cId, time, oldAmount}) {
+export default function CartCard({ img, name, price, pId, cId, time, oldAmount, discount}) {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
     const [goodsData, setGoodsData] = useState({});
@@ -38,7 +38,6 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount})
     function OnPay(e) {
         e.preventDefault();
 
-        console.log(time)
         const token = localStorage.getItem('token');
         const data = new FormData();
         data.append('name', goodsData.name);
@@ -47,6 +46,7 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount})
         data.append('amount', oldAmount);
         data.append('receive_status', false);
         data.append('price', goodsData.price);
+        data.append('discount', discount);
         if(time) {
             data.append('date', time.date);
             data.append('hour', time.hour);
@@ -62,6 +62,9 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount})
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
+            })
+            .then(() => {
+                axios.patch(`https://valbershop-api.vercel.app/v1/shop/stock/${pId}/${oldAmount}`);
             })
         })
         .then(() => {
@@ -127,7 +130,7 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount})
                     </>
                 }
                 <p className="text-xl md:text-2xl 2xl:text-3xl text-[#d4af37] font-bold">Price</p>
-                <p className="text-2xl md:text-xl 2xl:text-2xl text-white font-semibold">Rp{ isEdit ? (price * amount).toLocaleString() : (price * oldAmount).toLocaleString() }</p>
+                <p className="text-2xl md:text-xl 2xl:text-2xl text-white font-semibold">Rp{ isEdit ? ((price * ((100 - discount)/100)) * amount).toLocaleString() : (price * oldAmount).toLocaleString() }</p>
                 <div className="grid 2xl:flex grid-cols-2 2xl:flex-row gap-2">
                     {isEdit && <Button name={"Cancel"} handleClick={() => setIsEdit(false)} />}
                     {isEdit && <Button name={"Change"} handleClick={OnEdit} />}

@@ -39,6 +39,7 @@ export default function Detail() {
         }
         data.append("price", goodsData.price);
         data.append("cart_image", goodsData.image[0]);
+        data.append("discount", goodsData.discount);
 
         axios.patch(`https://valbershop-api.vercel.app/v1/api/cart`, data, {
             headers: {
@@ -161,7 +162,7 @@ export default function Detail() {
                             </div>
                             <div className="flex flex-col gap-y-5">
                                 <p className="text-2xl lg:text-3xl font-semibold">Price</p>
-                                <p className="text-base lg:text-xl font-semibold text-white">Rp{goodsData.price.toLocaleString()}</p>
+                                <p className="text-base lg:text-xl font-semibold text-white">Rp{(goodsData.price * ((100 - goodsData.discount)/100)).toLocaleString()}</p>
                             </div>
                             {goodsData.stock && 
                                 <div className="flex flex-col gap-y-5">
@@ -207,6 +208,9 @@ export default function Detail() {
                                                     </div>
                                                 </div>
                                     })
+                                }
+                                {review.length === 0 && 
+                                    <p className="text-[#d4af37] text-center w-full">No comments</p>
                                 }
                             </div>
                             {!onCart && goodsData.type.toLowerCase() === "product" && 
