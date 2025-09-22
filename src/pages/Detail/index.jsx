@@ -86,9 +86,13 @@ export default function Detail() {
         .then(result => {
             const ratingData = result.data.goodsData.review.map(rev => rev.star);
             setGoodsData(result.data.goodsData);
-            setRating(ratingData.reduce((prev, curr) => {
-                return prev + curr;
-            }, 0)/ratingData.length);
+            if(ratingData.length !== 0) {
+                setRating(ratingData.reduce((prev, curr) => {
+                    return prev + curr;
+                }, 0)/ratingData.length);
+            } else {
+                setRating(0);
+            }
             setReview(result.data.goodsData.review.map(rev => rev));
             setGId(result.data.goodsData._id);
         });

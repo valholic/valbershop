@@ -13,7 +13,7 @@ export default function ProductForm() {
     const [type, setType] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
-    const [discount, setDiscount] = useState(null);
+    const [discount, setDiscount] = useState(0);
     const [stock, setStock] = useState(0);
     const [time, setTime] = useState([""]);
     const [productsData, setProductsData] = useState([]);
@@ -290,7 +290,7 @@ export default function ProductForm() {
                     </div>
                 </div>
                 }
-                <InputTPENT type={'number'} name={'goods-discount'} label={'Discount'} value={discount} handleChange={e => setDiscount(e.target.value)} required={false} min={1} max={99} />
+                <InputTPENT type={'number'} name={'goods-discount'} label={'Discount'} value={discount} handleChange={e => setDiscount(e.target.value)} required={false} min={0} max={99} />
                 {previewImages.length !== 0 &&
                     <>
                     <div className="w-full h-fit flex flex-nowrap items-center justify-evenly">
