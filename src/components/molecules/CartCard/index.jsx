@@ -99,7 +99,7 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount }
     }, [pId, goodsData])
 
     return (
-        <div className="flex flex-col md:flex-row w-full h-fit md:h-105 md:bg-[#353535] rounded-4xl font-Poiret p-5 relative">
+        <div className="flex flex-col md:flex-row md:gap-x-4 w-full h-fit md:h-105 md:bg-[#353535] rounded-4xl font-Poiret p-5 relative">
             <img src={img} className="md:hidden absolute w-full h-full -m-5 rounded-2xl opacity-20 z-0" />
             {isChange && <ChangeTime handleOut={() => setIsChange(false)} handleTime={setHour} handleDate={setDate} hour={hour} date={date} goodsData={goodsData} />}
             {isPay && <Payment handleOut={() => setIsPay(false)} handlePay={OnPay} />}
