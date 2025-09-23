@@ -33,9 +33,8 @@ export default function BookNow({ handleOut, sId}) {
         data.append("product_type", goodsData.type);
         data.append('date', date);
         data.append('hour', hour);
-        data.append("price", goodsData.price);
+        data.append("price", goodsData.price * ((100 - goodsData.discount)/100));
         data.append("cart_image", goodsData.image[0]);
-        data.append("discount", goodsData.discount);
 
         axios.patch(`https://valbershop-api.vercel.app/v1/api/cart`, data, {
             headers: {

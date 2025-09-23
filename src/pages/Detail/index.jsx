@@ -37,9 +37,8 @@ export default function Detail() {
             data.append('date', date);
             data.append('hour', time);
         }
-        data.append("price", goodsData.price);
+        data.append("price", goodsData.price * ((100 - goodsData.discount)/100));
         data.append("cart_image", goodsData.image[0]);
-        data.append("discount", goodsData.discount);
 
         axios.patch(`https://valbershop-api.vercel.app/v1/api/cart`, data, {
             headers: {
