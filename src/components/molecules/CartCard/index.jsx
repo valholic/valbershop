@@ -45,7 +45,7 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount }
         data.append('type', goodsData.type);
         data.append('amount', oldAmount);
         data.append('receive_status', false);
-        data.append('price', goodsData.price);
+        data.append('price', price);
         if(time) {
             data.append('date', time.date);
             data.append('hour', time.hour);
@@ -96,7 +96,6 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount }
         .then(result => {
             setGoodsData(result.data.goodsData);
         });
-
     }, [pId, goodsData])
 
     return (
@@ -129,7 +128,7 @@ export default function CartCard({ img, name, price, pId, cId, time, oldAmount }
                     </>
                 }
                 <p className="text-xl md:text-2xl 2xl:text-3xl text-[#d4af37] font-bold">Price</p>
-                <p className="text-2xl md:text-xl 2xl:text-2xl text-white font-semibold">Rp{ isEdit ? (price * oldAmount).toLocaleString() : (price * oldAmount).toLocaleString() }</p>
+                <p className="text-2xl md:text-xl 2xl:text-2xl text-white font-semibold">Rp{ isEdit ? (price * amount).toLocaleString() : (price * oldAmount).toLocaleString() }</p>
                 <div className="grid 2xl:flex grid-cols-2 2xl:flex-row gap-2">
                     {isEdit && <Button name={"Cancel"} handleClick={() => setIsEdit(false)} />}
                     {isEdit && <Button name={"Change"} handleClick={OnEdit} />}
